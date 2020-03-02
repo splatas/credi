@@ -12,9 +12,9 @@ FROM jenkins:2
 
 # COPIAR LOS .jar OBTENIDOS EN <DM_ROOT>/java_api/lib/ or <DM_ROOT>/AdminConsole/lib/ (Credicoop Dimemnsions Server) EN EL DIR dimesions-lib 
 #RUN mkdir -p /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
-RUN ls -la ./dimensions-libs/*.jar
+COPY *.jar /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
+#RUN ls -la ./dimensions-libs/*.jar
 RUN ls -la /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
-COPY ./dimensions-libs/*.jar /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
 
 #RUN mkdir -p /var/lib/jenkins/configuration/
 RUN ls -la ./openshift-pipelines/jenkins/configuration/*.xml
