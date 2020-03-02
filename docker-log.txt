@@ -1,0 +1,74 @@
+Cloning "http://github.com/splatas/credi.git" ...
+	Commit:	1d2a4ad24ded9532902bbbf6a9e6b40f0889c292 (Run mkdir again.)
+	Author:	Sergio Platas <splatas@redhat.com>
+	Date:	Mon Mar 2 14:36:18 2020 -0300
+Replaced Dockerfile FROM image jenkins:2
+Caching blobs under "/var/cache/blobs".
+
+Pulling image image-registry.openshift-image-registry.svc:5000/openshift/jenkins@sha256:84432509cdb5449d30b42ca0b314bc619189d15e3620aa975b14fa7f1819645f ...
+Getting image source signatures
+Copying blob sha256:4fbc3bafa3d4400bb97a733c1fe12f2f99bf38b9d5b913d5034f29798739654d
+Copying blob sha256:eb8b56a4e1384d8bf72a65f3953d4d3e9c2980191ec75ed41751f1b560e247b8
+Copying blob sha256:4a21444dc61515c74392d648347471d1ebc8cd8ee35bb734dcfc9978bec41837
+Copying blob sha256:34971b2d1eb98e410c2802e6bb3a7f499f9c5bff1b870ed329089ecdb21cf856
+Copying blob sha256:2dc39637ab70421b4ec048512eb2ef79c9ee26392952102f3184bba8ab9602fd
+Copying blob sha256:ba3b4c37055182c034b6438d601a842cde98edd9239c97d3ae60cce5fc6674b8
+Copying config sha256:32e0ba875223e4c4f5db5ee31010b5b4a59c8f22b6e863acb8d99615d845e225
+Writing manifest to image destination
+Storing signatures
+STEP 1: FROM image-registry.openshift-image-registry.svc:5000/openshift/jenkins@sha256:84432509cdb5449d30b42ca0b314bc619189d15e3620aa975b14fa7f1819645f
+STEP 2: RUN mkdir -p /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
+time="2020-03-02T17:39:25Z" level=warning msg="pkg/chroot: error unmounting \"/tmp/buildah173852495/mnt/rootfs\": error checking if \"/tmp/buildah173852495/mnt/rootfs/sys/fs/cgroup/pids\" is mounted: no such file or directory"
+time="2020-03-02T17:39:25Z" level=warning msg="pkg/bind: error unmounting \"/tmp/buildah173852495/mnt/rootfs\": error checking if \"/tmp/buildah173852495/mnt/rootfs/sys/fs/cgroup/pids\" is mounted: no such file or directory"
+d606aee3efed311d7084ea218aca5433649724de11e43fc517f9a47828182c33
+STEP 3: COPY *.jar /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
+fb9aac272a66f5a2d3df8061a9685a3cc2e6d45c3fca56de326ae509dbcc8a1f
+STEP 4: RUN ls -la /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
+total 12184
+drwxr-xr-x. 2 1001 root      52 Mar  2 17:39 .
+drwxr-xr-x. 3 1001 root      17 Mar  2 17:39 ..
+-rw-r--r--. 1 1001 root 4733376 Mar  2 17:38 dm-java-cli.jar
+-rw-r--r--. 1 1001 root 7740894 Mar  2 17:38 rc-java-cli.jar
+time="2020-03-02T17:39:30Z" level=warning msg="pkg/chroot: error unmounting \"/tmp/buildah652211702/mnt/rootfs\": error checking if \"/tmp/buildah652211702/mnt/rootfs/sys/fs/cgroup/pids\" is mounted: no such file or directory"
+time="2020-03-02T17:39:30Z" level=warning msg="pkg/bind: error unmounting \"/tmp/buildah652211702/mnt/rootfs\": error checking if \"/tmp/buildah652211702/mnt/rootfs/sys/fs/cgroup/pids\" is mounted: no such file or directory"
+1233fe8882f94d75fe0cca0791fdd73f99b27ce67d76f7d6eeb45520b363ee36
+STEP 5: RUN mkdir -p /var/lib/jenkins/configuration/
+time="2020-03-02T17:39:36Z" level=warning msg="pkg/chroot: error unmounting \"/tmp/buildah501589121/mnt/rootfs\": error checking if \"/tmp/buildah501589121/mnt/rootfs/sys/fs/cgroup/pids\" is mounted: no such file or directory"
+time="2020-03-02T17:39:36Z" level=warning msg="pkg/bind: error unmounting \"/tmp/buildah501589121/mnt/rootfs\": error checking if \"/tmp/buildah501589121/mnt/rootfs/sys/fs/cgroup/pids\" is mounted: no such file or directory"
+c29679a853a23f311a8ce6fda5dddbf4f6368e0236e502935fc044ab811db2b2
+STEP 6: COPY *.xml /var/lib/jenkins/configuration/
+dae6bb1c8365342ce03d9e8b33f19f091bb3d7e7665a41d231247438fa516bef
+STEP 7: RUN ls -la /var/lib/jenkins/configuration/
+total 8
+drwxr-xr-x. 2    1001 root  139 Mar  2 17:39 .
+drwxrwxr-x. 4 jenkins root   42 Mar  2 17:39 ..
+-rw-r--r--. 1    1001 root  757 Mar  2 17:38 io.fabric8.jenkins.openshiftsync.GlobalPluginConfiguration.xml
+-rw-r--r--. 1    1001 root 1021 Mar  2 17:38 org.jenkinsci.plugins.workflow.libs.GlobalLibraries.xml
+time="2020-03-02T17:39:40Z" level=warning msg="pkg/chroot: error unmounting \"/tmp/buildah938192383/mnt/rootfs\": error checking if \"/tmp/buildah938192383/mnt/rootfs/sys/fs/cgroup/pids\" is mounted: no such file or directory"
+time="2020-03-02T17:39:40Z" level=warning msg="pkg/bind: error unmounting \"/tmp/buildah938192383/mnt/rootfs\": error checking if \"/tmp/buildah938192383/mnt/rootfs/sys/fs/cgroup/pids\" is mounted: no such file or directory"
+2be3d992d63bb52f296e341a424028d4193ed93df299031bbed0b3fc9efaa067
+STEP 8: ENV "OPENSHIFT_BUILD_NAME"="jenkins-30" "OPENSHIFT_BUILD_NAMESPACE"="pruebas-rh" "OPENSHIFT_BUILD_SOURCE"="http://github.com/splatas/credi.git" "OPENSHIFT_BUILD_REFERENCE"="master" "OPENSHIFT_BUILD_COMMIT"="1d2a4ad24ded9532902bbbf6a9e6b40f0889c292"
+447bca2aecb68347611b00ea6c12fe53f34989e6cb6a45e0c40c64b38041fe0f
+STEP 9: LABEL "io.openshift.build.commit.author"="Sergio Platas \u003csplatas@redhat.com\u003e" "io.openshift.build.commit.date"="Mon Mar 2 14:36:18 2020 -0300" "io.openshift.build.commit.id"="1d2a4ad24ded9532902bbbf6a9e6b40f0889c292" "io.openshift.build.commit.message"="Run mkdir again." "io.openshift.build.commit.ref"="master" "io.openshift.build.name"="jenkins-30" "io.openshift.build.namespace"="pruebas-rh" "io.openshift.build.source-location"="http://github.com/splatas/credi.git"
+STEP 10: COMMIT temp.builder.openshift.io/pruebas-rh/jenkins-30:8bcc4ef0
+8167490519cd065808429006fe22f1e573a9134481e78306ad693dc4fe63243a
+
+Pushing image image-registry.openshift-image-registry.svc:5000/pruebas-rh/jenkins:latest ...
+Getting image source signatures
+Copying blob sha256:ba3b4c37055182c034b6438d601a842cde98edd9239c97d3ae60cce5fc6674b8
+Copying blob sha256:eb8b56a4e1384d8bf72a65f3953d4d3e9c2980191ec75ed41751f1b560e247b8
+Copying blob sha256:2dc39637ab70421b4ec048512eb2ef79c9ee26392952102f3184bba8ab9602fd
+Copying blob sha256:4a21444dc61515c74392d648347471d1ebc8cd8ee35bb734dcfc9978bec41837
+Copying blob sha256:34971b2d1eb98e410c2802e6bb3a7f499f9c5bff1b870ed329089ecdb21cf856
+Copying blob sha256:4fbc3bafa3d4400bb97a733c1fe12f2f99bf38b9d5b913d5034f29798739654d
+Copying blob sha256:40b097ce3d24935c23530400eb7ef45f965993d2f5f84325f59dc9deed237a19
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying blob sha256:f970fba5389becd960af7d75883c90193e36668dc0757d4bd24acb291016df2c
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying config sha256:8167490519cd065808429006fe22f1e573a9134481e78306ad693dc4fe63243a
+Writing manifest to image destination
+Storing signatures
+Successfully pushed image-registry.openshift-image-registry.svc:5000/pruebas-rh/jenkins@sha256:24a07b80f43133f0c84e0af45e7299d45a8d075083261efc1a3b603358cf324f
+Push successful
