@@ -11,11 +11,11 @@ FROM jenkins:2
 #RUN export DIMENSIONS_LIB_FOLDER=plugins/dimensionsscm/WEB-INF/lib/tessting/
 
 # COPIAR LOS .jar OBTENIDOS EN <DM_ROOT>/java_api/lib/ or <DM_ROOT>/AdminConsole/lib/ (Credicoop Dimemnsions Server) EN EL DIR dimesions-lib 
-#RUN mkdir -p /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
+RUN mkdir -p /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
 COPY *.jar /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
 #RUN ls -la ./dimensions-libs/*.jar
 RUN ls -la /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
 
-#RUN mkdir -p /var/lib/jenkins/configuration/
+RUN mkdir -p /var/lib/jenkins/configuration/
 COPY *.xml /var/lib/jenkins/configuration/
 RUN ls -la /var/lib/jenkins/configuration/
