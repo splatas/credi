@@ -12,8 +12,6 @@ FROM jenkins:2
 #RUN export DIMENSIONS_LIB_FOLDER=plugins/dimensionsscm/WEB-INF/lib/tessting/
 
 # COPIAR LOS .jar OBTENIDOS EN <DM_ROOT>/java_api/lib/ or <DM_ROOT>/AdminConsole/lib/ (Credicoop Dimemnsions Server) EN EL DIR dimesions-lib 
-RUN docker version
-
 RUN mkdir -p /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
 COPY dm-java-cli.jar /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
 COPY rc-java-cli.jar /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
