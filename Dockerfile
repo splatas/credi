@@ -21,4 +21,4 @@ RUN ls -la /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
 RUN mkdir -p /var/lib/jenkins/configuration/
 COPY io.fabric8.jenkins.openshiftsync.GlobalPluginConfiguration.xml /var/lib/jenkins/configuration/
 COPY org.jenkinsci.plugins.workflow.libs.GlobalLibraries.xml /var/lib/jenkins/configuration/
-RUN ls -la /var/lib/jenkins/configuration/
+#RUN ls -la /var/lib/jenkins/configuration/
