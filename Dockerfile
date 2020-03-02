@@ -17,6 +17,5 @@ COPY *.jar /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
 RUN ls -la /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
 
 #RUN mkdir -p /var/lib/jenkins/configuration/
-RUN ls -la ./openshift-pipelines/jenkins/configuration/*.xml
+COPY *.xml /var/lib/jenkins/configuration/
 RUN ls -la /var/lib/jenkins/configuration/
-COPY ./openshift-pipelines/jenkins/configuration/*.xml /var/lib/jenkins/configuration/
