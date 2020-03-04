@@ -1,0 +1,42 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: 2020-02-26T21:10:27Z
+  labels:
+    app: jenkins-custom
+  name: jenkins-custom
+  namespace: pruebas-rh
+  resourceVersion: "87963371"
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: jenkins-custom:latest
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      ref: master
+      uri: http://github.com/splatas/credi.git
+    type: Git
+  strategy:
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: jenkins:2
+        namespace: openshift
+    type: Docker
+  successfulBuildsHistoryLimit: 5
+  triggers:
+  - github:
+      secret: fUB4wnwkBKmbLwmI6aaC
+    type: GitHub
+  - generic:
+      secret: iKLR9S4WAqmNH4TEr5MB
+    type: Generic
+  - type: ConfigChange

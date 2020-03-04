@@ -72,3 +72,129 @@ Writing manifest to image destination
 Storing signatures
 Successfully pushed image-registry.openshift-image-registry.svc:5000/pruebas-rh/jenkins@sha256:24a07b80f43133f0c84e0af45e7299d45a8d075083261efc1a3b603358cf324f
 Push successful
+
+
+
+===============================================================
+Cloning "http://github.com/splatas/credi.git" ...
+	Commit:	b1e2f7b9dccab46e3cdd4dd1f4230e56df1f92de (Docker version removed)
+	Author:	Sergio Platas <splatas@redhat.com>
+	Date:	Mon Mar 2 16:32:11 2020 -0300
+Replaced Dockerfile FROM image jenkins:2
+Caching blobs under "/var/cache/blobs".
+
+Pulling image image-registry.openshift-image-registry.svc:5000/openshift/jenkins@sha256:84432509cdb5449d30b42ca0b314bc619189d15e3620aa975b14fa7f1819645f ...
+Getting image source signatures
+Copying blob sha256:eb8b56a4e1384d8bf72a65f3953d4d3e9c2980191ec75ed41751f1b560e247b8
+Copying blob sha256:34971b2d1eb98e410c2802e6bb3a7f499f9c5bff1b870ed329089ecdb21cf856
+Copying blob sha256:4a21444dc61515c74392d648347471d1ebc8cd8ee35bb734dcfc9978bec41837
+Copying blob sha256:2dc39637ab70421b4ec048512eb2ef79c9ee26392952102f3184bba8ab9602fd
+Copying blob sha256:ba3b4c37055182c034b6438d601a842cde98edd9239c97d3ae60cce5fc6674b8
+Copying blob sha256:4fbc3bafa3d4400bb97a733c1fe12f2f99bf38b9d5b913d5034f29798739654d
+Copying config sha256:32e0ba875223e4c4f5db5ee31010b5b4a59c8f22b6e863acb8d99615d845e225
+Writing manifest to image destination
+Storing signatures
+STEP 1: FROM image-registry.openshift-image-registry.svc:5000/openshift/jenkins@sha256:84432509cdb5449d30b42ca0b314bc619189d15e3620aa975b14fa7f1819645f
+STEP 2: RUN mkdir -p /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
+time="2020-03-02T19:34:49Z" level=warning msg="pkg/chroot: error unmounting \"/tmp/buildah109333450/mnt/rootfs\": error checking if \"/tmp/buildah109333450/mnt/rootfs/sys/fs/cgroup/perf_event\" is mounted: no such file or directory"
+time="2020-03-02T19:34:49Z" level=warning msg="pkg/bind: error unmounting \"/tmp/buildah109333450/mnt/rootfs\": error checking if \"/tmp/buildah109333450/mnt/rootfs/sys/fs/cgroup/perf_event\" is mounted: no such file or directory"
+bb8c2dd2591d9386dc21d44923c938370fd0873e636ea3d100214f2d49f895c2
+STEP 3: COPY dm-java-cli.jar /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
+eec509f3d8f95d9fa8a1c12c7702c6209a4a9596e699b89352458370c0fc4cd0
+STEP 4: COPY rc-java-cli.jar /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
+7117fde0ba91178d7aa0e63358ab7fb596057bd3361b2926825d49fbac61be0f
+STEP 5: RUN ls -la /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
+total 12184
+drwxr-xr-x. 2 1001 root      52 Mar  2 19:34 .
+drwxr-xr-x. 3 1001 root      17 Mar  2 19:34 ..
+-rw-r--r--. 1 1001 root 4733376 Mar  2 19:34 dm-java-cli.jar
+-rw-r--r--. 1 1001 root 7740894 Mar  2 19:34 rc-java-cli.jar
+time="2020-03-02T19:34:55Z" level=warning msg="pkg/chroot: error unmounting \"/tmp/buildah626158432/mnt/rootfs\": error checking if \"/tmp/buildah626158432/mnt/rootfs/sys/fs/cgroup/perf_event\" is mounted: no such file or directory"
+time="2020-03-02T19:34:55Z" level=warning msg="pkg/bind: error unmounting \"/tmp/buildah626158432/mnt/rootfs\": error checking if \"/tmp/buildah626158432/mnt/rootfs/sys/fs/cgroup/perf_event\" is mounted: no such file or directory"
+b7c6d2a4bb2112463e3439952007e9ca71dee791b381db5a67aed7292ab752b0
+STEP 6: RUN mkdir -p /var/lib/jenkins/configuration/
+time="2020-03-02T19:35:00Z" level=warning msg="pkg/chroot: error unmounting \"/tmp/buildah489092355/mnt/rootfs\": error checking if \"/tmp/buildah489092355/mnt/rootfs/sys/fs/cgroup/perf_event\" is mounted: no such file or directory"
+time="2020-03-02T19:35:00Z" level=warning msg="pkg/bind: error unmounting \"/tmp/buildah489092355/mnt/rootfs\": error checking if \"/tmp/buildah489092355/mnt/rootfs/sys/fs/cgroup/perf_event\" is mounted: no such file or directory"
+2b25a2952bead100e7fe01e39ea79b6686a62e9234ffe8699b9bd6d21c40103a
+STEP 7: COPY io.fabric8.jenkins.openshiftsync.GlobalPluginConfiguration.xml /var/lib/jenkins/configuration/
+0a9c6d370752ac9c1449ac0d2222fd8844e4f22e3f97091dd6957db634168af6
+STEP 8: COPY org.jenkinsci.plugins.workflow.libs.GlobalLibraries.xml /var/lib/jenkins/configuration/
+1fa2b7607a68a5d37b06f4b3726dcfb552ac8dc1bb3466c8d5016df89821fca7
+STEP 9: RUN ls -la /var/lib/jenkins/configuration/
+total 8
+drwxr-xr-x. 2    1001 root  139 Mar  2 19:35 .
+drwxrwxr-x. 4 jenkins root   42 Mar  2 19:35 ..
+-rw-r--r--. 1    1001 root  757 Mar  2 19:34 io.fabric8.jenkins.openshiftsync.GlobalPluginConfiguration.xml
+-rw-r--r--. 1    1001 root 1021 Mar  2 19:34 org.jenkinsci.plugins.workflow.libs.GlobalLibraries.xml
+time="2020-03-02T19:35:05Z" level=warning msg="pkg/chroot: error unmounting \"/tmp/buildah196567356/mnt/rootfs\": error checking if \"/tmp/buildah196567356/mnt/rootfs/sys/fs/cgroup/perf_event\" is mounted: no such file or directory"
+time="2020-03-02T19:35:05Z" level=warning msg="pkg/bind: error unmounting \"/tmp/buildah196567356/mnt/rootfs\": error checking if \"/tmp/buildah196567356/mnt/rootfs/sys/fs/cgroup/perf_event\" is mounted: no such file or directory"
+7d937cbc7352c1d820867dc922dfc78835a6902a8137504e58b25c4969e36c8f
+STEP 10: ENV "OPENSHIFT_BUILD_NAME"="jenkins-32" "OPENSHIFT_BUILD_NAMESPACE"="pruebas-rh" "OPENSHIFT_BUILD_SOURCE"="http://github.com/splatas/credi.git" "OPENSHIFT_BUILD_REFERENCE"="master" "OPENSHIFT_BUILD_COMMIT"="b1e2f7b9dccab46e3cdd4dd1f4230e56df1f92de"
+fb86f5bd99281d392bddc3979ce90918faf0995697be9323ee4846f8f77caadf
+STEP 11: LABEL "io.openshift.build.commit.author"="Sergio Platas \u003csplatas@redhat.com\u003e" "io.openshift.build.commit.date"="Mon Mar 2 16:32:11 2020 -0300" "io.openshift.build.commit.id"="b1e2f7b9dccab46e3cdd4dd1f4230e56df1f92de" "io.openshift.build.commit.message"="Docker version removed" "io.openshift.build.commit.ref"="master" "io.openshift.build.name"="jenkins-32" "io.openshift.build.namespace"="pruebas-rh" "io.openshift.build.source-location"="http://github.com/splatas/credi.git"
+STEP 12: COMMIT temp.builder.openshift.io/pruebas-rh/jenkins-32:5e4b3c1b
+741c9cf59360654264b5e911e082f0f791ac371510d57936e94769586933eb5d
+Getting image source signatures
+
+Pushing image image-registry.openshift-image-registry.svc:5000/pruebas-rh/jenkins:latest ...
+Copying blob sha256:4fbc3bafa3d4400bb97a733c1fe12f2f99bf38b9d5b913d5034f29798739654d
+Copying blob sha256:eb8b56a4e1384d8bf72a65f3953d4d3e9c2980191ec75ed41751f1b560e247b8
+Copying blob sha256:4a21444dc61515c74392d648347471d1ebc8cd8ee35bb734dcfc9978bec41837
+Copying blob sha256:ba3b4c37055182c034b6438d601a842cde98edd9239c97d3ae60cce5fc6674b8
+Copying blob sha256:2dc39637ab70421b4ec048512eb2ef79c9ee26392952102f3184bba8ab9602fd
+Copying blob sha256:34971b2d1eb98e410c2802e6bb3a7f499f9c5bff1b870ed329089ecdb21cf856
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying blob sha256:fa9f87e78f78ef522e5f78756df6b2736cc18f9c9a682bf8339749862e217410
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying blob sha256:a1b3e247bfb9f7c135c4b3fe1ef6225aba3ed7df0fff312b6484488261b992f1
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying blob sha256:387e4d214281a2d5b920c16a5545a76100d6f6da368498f9c2f3d14598163a89
+Copying blob sha256:18222172e0dc0a42d0eb846988979d5ccc704065b14e4a2f737db2007a5776dd
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying config sha256:741c9cf59360654264b5e911e082f0f791ac371510d57936e94769586933eb5d
+Writing manifest to image destination
+Successfully pushed image-registry.openshift-image-registry.svc:5000/pruebas-rh/jenkins:latest
+Warning: Push failed, retrying in 5s ...
+Getting image source signatures
+Copying blob sha256:34971b2d1eb98e410c2802e6bb3a7f499f9c5bff1b870ed329089ecdb21cf856
+Copying blob sha256:4a21444dc61515c74392d648347471d1ebc8cd8ee35bb734dcfc9978bec41837
+Copying blob sha256:eb8b56a4e1384d8bf72a65f3953d4d3e9c2980191ec75ed41751f1b560e247b8
+Copying blob sha256:2dc39637ab70421b4ec048512eb2ef79c9ee26392952102f3184bba8ab9602fd
+Copying blob sha256:ba3b4c37055182c034b6438d601a842cde98edd9239c97d3ae60cce5fc6674b8
+Copying blob sha256:4fbc3bafa3d4400bb97a733c1fe12f2f99bf38b9d5b913d5034f29798739654d
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying blob sha256:a1b3e247bfb9f7c135c4b3fe1ef6225aba3ed7df0fff312b6484488261b992f1
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying blob sha256:387e4d214281a2d5b920c16a5545a76100d6f6da368498f9c2f3d14598163a89
+Copying blob sha256:fa9f87e78f78ef522e5f78756df6b2736cc18f9c9a682bf8339749862e217410
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying blob sha256:18222172e0dc0a42d0eb846988979d5ccc704065b14e4a2f737db2007a5776dd
+Copying config sha256:741c9cf59360654264b5e911e082f0f791ac371510d57936e94769586933eb5d
+Writing manifest to image destination
+Successfully pushed image-registry.openshift-image-registry.svc:5000/pruebas-rh/jenkins:latest
+Warning: Push failed, retrying in 5s ...
+Getting image source signatures
+Copying blob sha256:2dc39637ab70421b4ec048512eb2ef79c9ee26392952102f3184bba8ab9602fd
+Copying blob sha256:4fbc3bafa3d4400bb97a733c1fe12f2f99bf38b9d5b913d5034f29798739654d
+Copying blob sha256:34971b2d1eb98e410c2802e6bb3a7f499f9c5bff1b870ed329089ecdb21cf856
+Copying blob sha256:4a21444dc61515c74392d648347471d1ebc8cd8ee35bb734dcfc9978bec41837
+Copying blob sha256:eb8b56a4e1384d8bf72a65f3953d4d3e9c2980191ec75ed41751f1b560e247b8
+Copying blob sha256:ba3b4c37055182c034b6438d601a842cde98edd9239c97d3ae60cce5fc6674b8
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying blob sha256:387e4d214281a2d5b920c16a5545a76100d6f6da368498f9c2f3d14598163a89
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying blob sha256:a1b3e247bfb9f7c135c4b3fe1ef6225aba3ed7df0fff312b6484488261b992f1
+Copying blob sha256:fa9f87e78f78ef522e5f78756df6b2736cc18f9c9a682bf8339749862e217410
+Copying blob sha256:18222172e0dc0a42d0eb846988979d5ccc704065b14e4a2f737db2007a5776dd
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying config sha256:741c9cf59360654264b5e911e082f0f791ac371510d57936e94769586933eb5d
+Writing manifest to image destination
+Successfully pushed image-registry.openshift-image-registry.svc:5000/pruebas-rh/jenkins:latest
+Warning: Push failed, retrying in 5s ...
+Registry server Address: 
+Registry server User Name: serviceaccount
+Registry server Email: serviceaccount@example.org
+Registry server Password: <<non-empty>>
+error: build error: Failed to push image: error copying layers and metadata from "containers-storage:[overlay@/var/lib/containers/storage+/var/run/containers/storage:overlay.imagestore=/var/lib/shared]image-registry.openshift-image-registry.svc:5000/pruebas-rh/jenkins:latest" to "docker://image-registry.openshift-image-registry.svc:5000/pruebas-rh/jenkins:latest": Error writing manifest: Error uploading manifest latest to image-registry.openshift-image-registry.svc:5000/pruebas-rh/jenkins: manifest blob unknown: blob unknown to registry

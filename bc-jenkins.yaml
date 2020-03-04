@@ -1,0 +1,49 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: 2020-02-26T21:10:27Z
+  labels:
+    app: jenkins
+  name: jenkins
+  namespace: pruebas-rh
+  resourceVersion: "87963371"
+  selfLink: /apis/build.openshift.io/v1/namespaces/pruebas-rh/buildconfigs/jenkins
+  uid: 69ab40bd-58dc-11ea-8066-0a580a8002e5
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: jenkins:latest
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      ref: master
+      uri: http://github.com/splatas/credi.git
+    type: Git
+  strategy:
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: jenkins:2
+        namespace: openshift
+    type: Docker
+  successfulBuildsHistoryLimit: 5
+  triggers:
+  - github:
+      secret: fUB4wnwkBKmbLwmI6aaC
+    type: GitHub
+  - generic:
+      secret: iKLR9S4WAqmNH4TEr5MB
+    type: Generic
+  - type: ConfigChange
+  - imageChange:
+      lastTriggeredImageID: image-registry.openshift-image-registry.svc:5000/openshift/jenkins@sha256:84432509cdb5449d30b42ca0b314bc619189d15e3620aa975b14fa7f1819645f
+    type: ImageChange
+status:
+  lastVersion: 33
