@@ -3,7 +3,7 @@
 # oc start-build jenkins --from-dir="." --follow --loglevel=10
 # oc start-build jenkins (apuntando a un repo Git)
 
-FROM registry.redhat.io/openshift3/jenkins-2-rhel7
+FROM jenkins-2-rhel7:1.0.3
 #FROM jenkins-2-custom
 #FROM jenkins:2
 #FROM registry.redhat.io/openshift4/ose-jenkins:latest
