@@ -9,9 +9,6 @@ FROM registry.redhat.io/openshift3/jenkins-2-rhel7
 #FROM registry.redhat.io/openshift4/ose-jenkins:latest
 
 # COPIAR LOS .jar OBTENIDOS EN <DM_ROOT>/java_api/lib/ or <DM_ROOT>/AdminConsole/lib/ (Credicoop Dimemnsions Server) EN EL DIR dimesions-lib 
-COPY dm-java-cli.jar /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
-COPY rc-java-cli.jar /var/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
+COPY ./dimensions-libs/*.jar /opt/lib/jenkins/plugins/dimensionsscm/WEB-INF/lib/
 
-#RUN mkdir -p /var/lib/jenkins/configuration/
-COPY io.fabric8.jenkins.openshiftsync.GlobalPluginConfiguration.xml /var/lib/jenkins/configuration/
-COPY org.jenkinsci.plugins.workflow.libs.GlobalLibraries.xml /var/lib/jenkins/configuration/
+COPY ./openshift-pipelines/jenkins/configuration/*.xml /opt/lib/jenkins/configuration/
