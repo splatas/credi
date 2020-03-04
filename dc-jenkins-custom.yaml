@@ -8,15 +8,14 @@ items:
     creationTimestamp: 2020-02-26T21:10:27Z
     generation: 8
     labels:
-      app: jenkins-custom
-    name: jenkins-custom
-    namespace: pruebas-rh
+      app: jenkins-2-rhel7-credicoop
+    name: jenkins-2-rhel7-credicoop
   spec:
     replicas: 1
     revisionHistoryLimit: 10
     selector:
-      app: jenkins-custom
-      deploymentconfig: jenkins-custom
+      app: jenkins-2-rhel7-credicoop
+      deploymentconfig: jenkins-2-rhel7-credicoop
     strategy:
       activeDeadlineSeconds: 21600
       resources: {}
@@ -33,13 +32,13 @@ items:
           openshift.io/generated-by: OpenShiftNewApp
         creationTimestamp: null
         labels:
-          app: jenkins-custom
-          deploymentconfig: jenkins-custom
+          app: jenkins-2-rhel7-credicoop
+          deploymentconfig: jenkins-2-rhel7-credicoop
       spec:
         containers:
-        - image: image-registry.openshift-image-registry.svc:5000/pruebas-rh/jenkins-custom
+        - image: image-registry.openshift-image-registry.svc:5000/openshift/jenkins-2-rhel7-credicoop
           imagePullPolicy: Always
-          name: jenkins-custom
+          name: jenkins-2-rhel7-credicoop
           ports:
           - containerPort: 50000
             protocol: TCP
@@ -65,11 +64,11 @@ items:
     - imageChangeParams:
         automatic: true
         containerNames:
-        - jenkins-custom
+        - jenkins-2-rhel7-credicoop
         from:
           kind: ImageStreamTag
-          name: jenkins-custom:latest
-          namespace: pruebas-rh
+          name: jenkins-2-rhel7-credicoop:1.0.3
+          namespace: openshift
       type: ImageChange
   status:
     availableReplicas: 1
@@ -84,7 +83,7 @@ items:
       - imageTrigger:
           from:
             kind: DockerImage
-            name: image-registry.openshift-image-registry.svc:5000/pruebas-rh/jenkins-custom
+            name: image-registry.openshift-image-registry.svc:5000/openshift/jenkins-2-rhel7-credicoop
         type: ImageChange
       message: image change
     latestVersion: 7
